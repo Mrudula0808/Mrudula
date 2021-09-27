@@ -1,0 +1,102 @@
+import java.util.Scanner;
+/*
+The below Class is useful to convert the values from one unit of measurement to another. The following are the types of conversations it can perform
+
+1. km to mi
+2. mi to km
+3. cm to in
+4. in to cm
+5. kg to lb
+6. lb to kg
+7. gm to oz
+8. oz to gm
+9. L to cups
+10. cup to L
+11. C to F
+12. F to C
+
+*/
+public class Convert {
+
+  public static void main(String[] args) {
+ 
+  System.out.println("Enter the value to convert : ");
+   Scanner in = new Scanner(System.in);
+   float initial_value=in.nextInt();
+   System.out.println("Enter the current unit of measurement : ");
+   String current_measurement = in.next();
+   double converted_value;
+   String converted_measurement=null;
+   //Convertion Starts here and it is performed using a switch case with current units of measurement as parameter.
+   switch (current_measurement){
+    
+     case "km" :
+     converted_value = (0.62) * initial_value;
+     converted_measurement = "mi";
+     break ;
+    
+     case "mi" :
+     converted_value = (1.61) * initial_value;
+     converted_measurement = "km";
+     break ;
+    
+     case "cm" :
+     converted_value = (0.39) * initial_value;
+     converted_measurement = "in";
+     break ;
+    
+     case "in" :
+     converted_value = (2.54) * initial_value;
+     converted_measurement = "cm";
+     break ;
+    
+     case "kg" :
+     converted_value = (2.20) * initial_value;
+     converted_measurement = "lb";
+     break ;
+    
+     case "lb" :
+     converted_value = (0.45) * initial_value;
+     converted_measurement = "kg";
+     break ;
+    
+     case "gm" :
+     converted_value = (0.04) * initial_value;
+     converted_measurement = "oz";
+     break ;
+    
+     case "oz" :
+     converted_value = (28.35)*initial_value;
+     converted_measurement = "gm";
+     break ;
+    
+     case "L" :
+     converted_value = (4.17) * initial_value;
+     converted_measurement = "cups";
+     break ;
+    
+     case "cup" :
+     converted_value = (0.24) * initial_value;
+     converted_measurement = "L";
+     break ;
+    
+     case "C" :
+     converted_value = ((1.8) * initial_value) + 32;
+     converted_measurement = "F";
+     break ;
+    
+     case "F" :
+     converted_value = (initial_value - 32) *  (0.56);
+     converted_measurement = "C";
+     break ;
+    
+     default :
+     System.out.println("Invalid Option!!!");
+     return ;
+   }
+  
+//The converted values and the new unit of measurement are displayed to the user.
+   System.out.println(""+initial_value+current_measurement+" is equal to "+converted_value+""+converted_measurement) ;
+  
+  }
+}
